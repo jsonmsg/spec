@@ -3,32 +3,31 @@
   "properties": {
     "endpoints": {
       "type": "object",
-      "properties": {
-        "host": { "type": "string" },
-        "protocols": {
-          "type": "array",
-          "items": { "type": "string" }
-        },
-        "tls": { "type": "boolean" }
-      },
-      "required": ["host", "protocols", "tls"]
+      "additionalProperties": { "type": "string" },
+      "required": ["http"]
     },
     "messages": {
       "type": "object",
-      "additionalProperties": {
-        "type": "object",
-        "properties": {
-          "title": { "type": "string" },
-          "description": { "type": "string" },
-          "in": { "type": "string" },
-          "outs": {
-            "type": "array",
-            "items": { "type": "string" }
+      "patternProperties": {
+        "^[a-zA-Z]+$": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "description": { "type": "string" },
+            "in": { "type": "string" },
+            "outs": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "group": { "type": "string" }
           },
-          "group": { "type": "string" }
+          "additionalProperties": false
         }
-      }
-    }
+      },
+      "additionalProperties": false
+    },
+    "definitions": {}
   },
-  "required": ["endpoints", "messages", "definitions"]
+  "required": ["endpoints", "messages", "definitions"],
+  "additionalProperties": false
 }
