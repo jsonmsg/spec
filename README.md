@@ -5,8 +5,8 @@ jsonmsg is an API specification format and protocol.
 It specifies simple, message based communication between servers and clients.
 As a central contract, a `spec.json` defines available endpoints with supported protocols, messages with data parameters, and data objects with properties and validation for exchange.
 
-- [Specification (1.0)](blob/master/spec.md)
-- [Contract Meta-Schema (1.0)](blob/master/meta.json)
+- [Specification (1.0)](spec.md)
+- [Contract Meta-Schema (1.0)](meta.json)
 
 To parse a contract `spec.json` and generate client and server code use:
 
